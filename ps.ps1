@@ -16,7 +16,7 @@ Expand-Archive -LiteralPath $zipPath -DestinationPath $extractedPath -Force
 $innerFolderName = Get-ChildItem -LiteralPath $extractedPath -Name
 $out = "$(Get-Location)/out"
 
-$ChatName = Read-Host "Please enter the ChatName: "
+$ChatName = Read-Host "Please enter Chat Name to export"
 
     try {
         pwsh.exe -File "$extractedPath/$innerFolderName/Get-MicrosoftTeamsChat.ps1" -exportFolder $out -toExport $ChatName
